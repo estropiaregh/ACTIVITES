@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <title>Document</title>
+
+    <script>
+      window.onload = function () {
+      
+      var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        title:{
+          text: "Daily High Temperature at Different Beaches"
+        },
+        axisX: {
+          valueFormatString: "DD MMM,YY"
+        },
+        axisY: {
+          title: "Temperature (in °C)",
+          suffix: " °C"
+        },
+        legend:{
+          cursor: "pointer",
+          fontSize: 16,
+          itemclick: toggleDataSeries
+        },
+        toolTip:{
+          shared: true
+        },
+        data: [{
+          name: "Myrtle Beach",
+          type: "spline",
+          yValueFormatString: "#0.## °C",
+          showInLegend: true,
+          dataPoints: [
+            { x: new Date(2017,6,24), y: 31 },
+            { x: new Date(2017,6,25), y: 31 },
+            { x: new Date(2017,6,26), y: 29 },
+            { x: new Date(2017,6,27), y: 29 },
+            { x: new Date(2017,6,28), y: 31 },
+            { x: new Date(2017,6,29), y: 30 },
+            { x: new Date(2017,6,30), y: 29 }
+          ]
+        },
+        {
+          name: "Martha Vineyard",
+          type: "spline",
+          yValueFormatString: "#0.## °C",
+          showInLegend: true,
+          dataPoints: [
+            { x: new Date(2017,6,24), y: 20 },
+            { x: new Date(2017,6,25), y: 20 },
+            { x: new Date(2017,6,26), y: 25 },
+            { x: new Date(2017,6,27), y: 25 },
+            { x: new Date(2017,6,28), y: 25 },
+            { x: new Date(2017,6,29), y: 25 },
+            { x: new Date(2017,6,30), y: 25 }
+          ]
+        },
+        {
+        
+      
+      function toggleDataSeries(e){
+        if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+          e.dataSeries.visible = false;
+        }
+        else{
+          e.dataSeries.visible = true;
+        }
+        chart.render();
+      }
+      
+      }
+      </script>
+    <style>
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+
+body{
+    background: #f5f6fa;
+}
+
+.wrapper .sidebar{
+    background: rgb(105, 136, 82);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+}
+
+.wrapper .sidebar .profile{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.wrapper .sidebar .profile img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.wrapper .sidebar .profile h3{
+    color: #ffffff;
+    margin: 10px 0 5px;
+}
+
+.wrapper .sidebar .profile p{
+    color: rgb(206, 240, 253);
+    font-size: 14px;
+}
+
+.wrapper .sidebar ul li a{
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid #155520;
+    color: rgb(241, 241, 237);
+    font-size: 16px;
+    position: relative;
+}
+
+.wrapper .sidebar ul li a .icon{
+    color: #251813;
+    width: 30px;
+    display: inline-block;
+}
+
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+    color: #103f02;
+
+    background:white;
+    border-right: 2px solid rgb(5, 104, 35);
+}
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon{
+    color: #0bbd23;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+    display: block;
+}
+
+.wrapper .section{
+    width: calc(100% - 225px);
+    margin-left: 300px;
+    transition: all 0.5s ease;
+}
+
+.wrapper .section .top_navbar{
+    background: rgb(29, 85, 46);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+
+}
+
+.wrapper .section .top_navbar .hamburger a{
+    font-size: 28px;
+    color: #f4fbff;
+}
+
+.wrapper .section .top_navbar .hamburger a:hover{
+    color: #a2ecff;
+}
+
+body.active .wrapper .sidebar{
+    left: -225px;
+}
+
+body.active .wrapper .section{
+    margin-left: 0;
+    width: 100%;
+}
+
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .4);
+  max-width: 300px;
+  margin-top:50px;
+  margin-right: 25px;
+  margin-left: 250px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: small;
+  float: left;
+  font-family:'Times New Roman';
+  background-color: rgb(5, 44, 12);
+  color: white;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+      <div class="section">
+        <div class="top_navbar">
+          
+            <div class="hamburger">
+                <a href="#">
+                    <i class="fas fa-bars"></i>
+                </a>
+                
+            </div>
+        </div>
+
+    </div>
+        <div class="sidebar">
+          <div class="profile">
+            <img src="anfgm.png" alt="profile_picture">
+            <h3>All Nation Full Gospel Ministry</h3>
+            <p>With God All Things are Possible Matthew 19:26</p>
+        </div>
+        <ul>
+          <li>
+              <a href="#" class="active">
+                <span class="Small material-icons">home</span>
+                  <span class="item"> Home</span>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <span class="Small material-icons">event</span>
+                  <span class="item"> Event</span>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                <span class="Small material-icons">call</span>
+                  <span class="item"> Contact</span>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                <span class="Small material-icons">star</span>
+                  <span class="item"> Reviews</span>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                <span class="Small material-icons">notifications</span>
+                  <span class="item"> Notifications</span>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                <span class="Small material-icons">settings_power</span>
+                  <span class="item"> Logout</span>
+              </a>
+          </li>
+      </ul>
+  </div>
+        </div>
+
+    </div>
+    <div class=" section section-stats">
+      <div class="row">
+        <div class="col s10 m6 l2">
+          <div class="card">
+            <img src="img2.jpg" alt="" style="width:100%">
+                <h2>Pstr.Alex Gareng</h2>
+                <div class="progress">
+                  <div class="indeterminate green"></div>
+              </div>
+              </div>
+              </div>
+              <div class="col s10 m6 l2">
+          <div class="card">
+            <img src="img3.jpg" alt="" style="width:100%">
+                <h2>Elder Nedo Castela</h2>
+                <div class="progress">
+                  <div class="indeterminate green"></div>
+                </div>
+              </div>
+              </div>
+        <div class="col s10 m6 l2">
+          <div class="card">
+            <img src="img4.jpg" alt="" style="width:100%">
+                <h2>Elder Raquel Bocio</h2>
+                <div class="progress">
+                  <div class="indeterminate green"></div>
+              </div>
+            </div>
+            </div>
+            <div class="col s10 m6 l2">
+              <div class="card">
+                <img src="img5.jpg" alt="" style="width:100%">
+                    <h2>Church Treasurer Odeth Castela</h2>
+                    <div class="progress">
+                      <div class="indeterminate green"></div>
+                  </div>
+                </div>
+                </div>
+                <div class="col s10 m6 l2">
+              <div class="card">
+                <img src="img6.jpg" alt="" style="width:100%">
+                    <h2>Youth Leader Reghina Estropia</h2>
+                    <div class="progress">
+                      <div class="indeterminate green"></div>
+                  </div>
+                </div>
+                </div>
+    </div>
+    </div>
+    <div id="chartContainer" style="height: 300px; width: 1000px; margin-left: 250px;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+  <script>
+    var hamburger = document.querySelector(".hamburger");
+    hamburger.addEventListener("click", function(){
+        document.querySelector("body").classList.toggle("active");
+    })
+    
+  </script>
+</body>
+</html>

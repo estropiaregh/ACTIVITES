@@ -1,0 +1,44 @@
+.card {
+    box-shadow: 0 8px 100px 0 rgba(150, 84, 3, 0.4);
+    max-width: 300px;
+    margin-top:200px;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    float: left;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif 'Helvetica Neue', sans-serif
+    
+  }
+  .title {
+    color: rgb(196, 103, 17);
+    font-size: 20px;
+  }
+
+  .card2{
+    color: rgb(105, 83, 41);
+    margin-top: 100px;
+    font-size: 170%;
+    justify-content: space-between;
+    float: right;
+    display: inline-block;
+    padding: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  body, html {
+    background:rgb(212, 189, 149);
+
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  footer{
+    position: fixed;
+    padding: 10 px 10 px 0px 10px;
+    bottom: 0;
+    width: 400px;
+    height:  30px;
+    margin-left: 1150px;
+    background:rgb(212, 189, 149);
+  }

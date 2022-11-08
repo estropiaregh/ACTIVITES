@@ -1,0 +1,27 @@
+body{ 
+    background-color: rgb(247, 239, 239);
+    text-align: center;
+
+}
+h1{
+    background-color: rgb(114, 87, 54);
+    font: 200;
+}
+h2{
+    
+    font-size: medium;
+    font-style: oblique;
+}
+h3{
+    font-style: oblique;
+    font-size: medium;
+    text-align: center
+}
+
+footer{
+    font-size: small;
+    color: rgb(110, 89, 57);
+    font-style: oblique;
+    text-align: center;
+   
+}
